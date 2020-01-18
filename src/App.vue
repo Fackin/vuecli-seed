@@ -1,19 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      cssstyle: 'blue'
+    };
+  },
+  mounted() {
+    // 换肤 只在初次加载 不适用页面内切换换肤，因二次加载覆盖； 切换换肤的方法应该使用多种样式名切换
+    console.log(window.location.origin);
+    let host = window.location.origin;
+    if (host.indexOf('localhost') > -1) {
+      require('./stylus/theme.blue.styl');
+    } else {
+      require('./stylus/theme.red.styl');
+    }
   }
-}
+};
 </script>
 
 <style>
@@ -21,8 +30,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

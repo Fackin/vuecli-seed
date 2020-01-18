@@ -1,6 +1,35 @@
 # vuecli-seed
 
+PC端应用，使用vue-router,vuex,集成ElementUI
+
+## 项目目录
+
+| ---- src
+
+​		| ---- assets 静态文件
+
+​		| ---- components 业务组件/较复杂的组件
+
+​		| ---- excomponents 通用性强/简易的组件
+
+​		| ---- stylus 样式文件（重写ElementUI,base...)
+
+​		| ---- utils 公共方法
+
+​		| ---- views 页面模块
+
+​				| ---- example
+
+​						| ---- index.js 模块路由及vuex
+
+​		| ---- store.js 全局vuex
+
+
+
+
+
 ## Project setup
+
 ```
 yarn install
 ```
